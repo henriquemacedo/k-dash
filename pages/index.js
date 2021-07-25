@@ -1,23 +1,27 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className="container">
       <Head>
-        <title>Next.js Starter!</title>
+        <title>K|Dash — Kanda Weather Group</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <select
+          onChange={(e) => {
+            router.push(`/weather/${e.target.value}`);
+          }}
+        >
+          <option>Please select city</option>
+          <option value="ghana/accra">Accra, Ghana</option>
+          <option value="nigeria/uyo">Uyo, Nigeria</option>
+        </select>
       </main>
-
-      <Footer />
     </div>
-  )
+  );
 }
