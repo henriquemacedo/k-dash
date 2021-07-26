@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import use24HoursData from "hooks/use24HoursData";
+import useHoursData from "hooks/useHoursData";
 
 const mockData = process.env.mockAPI === true;
 
@@ -14,7 +14,7 @@ export const useSoilWaterData = (props) => {
 
       if (mockData) {
         const volSoilwaterData = require("server/mocks/fakeVolSoilWater");
-        setData(use24HoursData(date, volSoilwaterData));
+        setData(useHoursData(date, volSoilwaterData));
         setLoading(false);
       }
 
@@ -23,7 +23,7 @@ export const useSoilWaterData = (props) => {
         const requestUrl = `https://api.dclimate.net/apiv2/grid-history/era5_volumetric_soil_water_layer_1-hourly/${lat}_${long}?also_return_metadata=false&use_imperial_units=false&also_return_snapped_coordinates=false&convert_to_local_time=true`;
         let fetchData = await fetch(proxyUrl + requestUrl);
         fetchData = await fetchData.json();
-        setData(use24HoursData(date, fetchData["data"]));
+        setData(useHoursData(date, fetchData["data"]));
         setLoading(false);
       } catch (error) {
         console.error("Error loading volumetric soil water data.");
