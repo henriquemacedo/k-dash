@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 
 export default function Home() {
   const router = useRouter();
+  const weatherZones = process.env.weatherZones;
 
   return (
     <div className="container">
@@ -18,8 +19,12 @@ export default function Home() {
           }}
         >
           <option>Please select city</option>
-          <option value="ghana/accra">Accra, Ghana</option>
-          <option value="nigeria/uyo">Uyo, Nigeria</option>
+          {weatherZones.map((local, index) => (
+            <option
+              key={index}
+              value={(local.country + "/" + local.city).toLowerCase()}
+            >{`${local.city}, ${local.country}`}</option>
+          ))}
         </select>
       </main>
     </div>
