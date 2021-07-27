@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSoilWaterData } from "hooks/useSoilWaterData";
+import SelectInteractive from "@ui/select";
 
 export default function Post() {
   const weatherZones = process.env.weatherZones;
@@ -29,6 +30,7 @@ export default function Post() {
 
   return (
     <>
+      <SelectInteractive />
       <p>Page: {slug}</p>
       <p>
         Status: {loading ? "Loading..." : !volSoilWater ? "Empty!" : "Done!"}
