@@ -10,15 +10,14 @@ export const useSoilWaterData = (props) => {
   const { lat, long } = local;
 
   useEffect(() => {
+    if (mockData) {
+      const volSoilwaterData = require("server/mocks/fakeVolSoilWater");
+      setVolSoilWater(useHoursData(date, volSoilwaterData));
+      setLoading(false);
+    }
+
     async function getVolSoilWater() {
       setLoading(true);
-
-      if (mockData) {
-        const volSoilwaterData = require("server/mocks/fakeVolSoilWater");
-        setVolSoilWater(useHoursData(date, volSoilwaterData));
-        setLoading(false);
-      }
-
       try {
         const proxyUrl = "https://cors-anywhere.herokuapp.com/";
         const requestUrl = `https://api.dclimate.net/apiv2/grid-history/era5_volumetric_soil_water_layer_1-hourly/${lat}_${long}?also_return_metadata=false&use_imperial_units=false&also_return_snapped_coordinates=false&convert_to_local_time=true`;
@@ -31,7 +30,7 @@ export const useSoilWaterData = (props) => {
       }
     }
 
-    getVolSoilWater();
+    !mockData && getVolSoilWater();
   }, [date, local]);
 
   return { loading, volSoilWater };
