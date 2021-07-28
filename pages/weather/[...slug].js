@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import SelectInteractive from "@ui/select";
 import DatePicker from "@ui/date-picker";
 import Page from "@components/page";
 import SurfaceRunoffChart from "@components/surface-runoff-chart";
@@ -43,7 +42,6 @@ export default function Post() {
         value={moment(date).format("YYYY-MM-DD")}
         onChange={(e) => setDate(e.detail.value)}
       />
-      <SelectInteractive />
       <p>Page: {slug}</p>
       <p>
         Status: {loading ? "Loading..." : !surfaceRunoff ? "Empty!" : "Done!"}

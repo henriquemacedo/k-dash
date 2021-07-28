@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Select from "react-select";
-import * as Styles from "./styles";
 
 export default function SelectInteractive() {
   const [defaultValue, setDefaultValue] = useState(null);
@@ -31,14 +30,12 @@ export default function SelectInteractive() {
   }, [currentRoute]);
 
   return (
-    <Styles.Wrapper>
-      <Select
-        instanceId="dasd"
-        placeholder="Please select a city"
-        options={selectOptions}
-        value={selectOptions[defaultValue]}
-        onChange={handleChange}
-      />
-    </Styles.Wrapper>
+    <Select
+      instanceId="dasd"
+      placeholder="Please select a city"
+      options={selectOptions}
+      value={selectOptions[defaultValue]}
+      onChange={handleChange}
+    />
   );
 }

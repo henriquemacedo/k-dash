@@ -1,6 +1,9 @@
+import "@styles/styles.css";
 import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "../styles/theme";
+import { GlobalStyles } from "../styles/theme";
+import Topbar from "@ui/topbar";
+import SelectInteractive from "@components/select-interactive";
 
 function Application({ Component, pageProps }) {
   const [mountedComponent, setMountedComponent] = useState(false);
@@ -32,9 +35,10 @@ function Application({ Component, pageProps }) {
   if (!mountedComponent) return <div />;
 
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+    <ThemeProvider theme={{ mode: isDarkTheme ? "dark" : "light" }}>
       <GlobalStyles />
-      <div>
+      <Topbar>
+        <SelectInteractive />
         <button onClick={toggleTheme}>
           {isDarkTheme ? (
             <span aria-label="Light mode" role="img">
@@ -46,7 +50,7 @@ function Application({ Component, pageProps }) {
             </span>
           )}
         </button>
-      </div>
+      </Topbar>
       <Component {...pageProps} />
     </ThemeProvider>
   );
