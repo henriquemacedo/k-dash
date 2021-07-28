@@ -1,6 +1,6 @@
 const moment = require("moment");
 
-export default function useFormatData(date, data) {
+export default function useFormatSurfaceRunoffData(date, data) {
   let items = [
     {
       id: "surface-runoff",
