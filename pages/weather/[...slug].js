@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import SelectInteractive from "@ui/select";
 import DatePicker from "@ui/date-picker";
+import Page from "@components/page";
 import SurfaceRunoffChart from "@components/surface-runoff-chart";
 import { useSurfaceRunoffData } from "hooks/useSurfaceRunoffData";
 
@@ -35,7 +36,7 @@ export default function Post() {
   });
 
   return (
-    <>
+    <Page>
       <DatePicker
         min={mockData ? "2021-06-02" : ""}
         max={mockData ? "2021-06-14" : ""}
@@ -55,6 +56,6 @@ export default function Post() {
       <Link href="/">
         <a>Back HOME</a>
       </Link>
-    </>
+    </Page>
   );
 }
