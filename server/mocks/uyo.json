@@ -1,0 +1,36 @@
+{
+  "country": "Nigeria",
+  "city": "Uyo",
+  "forecast": [
+    {
+      "date": "2021-01-18",
+      "pressure": 1007.0,
+      "temperature": 29.5,
+      "humidity": 77,
+      "condition": "Cloudy",
+      "wind": 5,
+      "wind direction": "WSW",
+      "rain": 80
+    },
+    {
+      "date": "2021-02-07",
+      "pressure": 999.3,
+      "temperature": 34.7,
+      "humidity": 57,
+      "condition": "Cloudy",
+      "wind": null,
+      "wind direction": "",
+      "rain": 20
+    },
+    {
+      "date": "2021-03-09",
+      "pressure": 998.2,
+      "temperature": 34.9,
+      "humidity": 60,
+      "condition": "Sunny",
+      "wind": 15,
+      "wind direction": "NE",
+      "rain": 20
+    }
+  ]
+}

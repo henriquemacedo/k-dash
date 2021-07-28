@@ -1,0 +1,156 @@
+{
+  "country": "Ghana",
+  "city": "Accra",
+  "forecast": [
+    {
+      "date": "2021-06-01",
+      "pressure": 1011.0,
+      "temperature": 31.0,
+      "humidity": 67,
+      "condition": "Overcast",
+      "wind": 4,
+      "wind direction": "ENE",
+      "rain": 30
+    },
+    {
+      "date": "2021-06-02",
+      "pressure": 1011.0,
+      "temperature": 32.0,
+      "humidity": 67,
+      "condition": "Mostly Cloudy",
+      "wind": 5,
+      "wind direction": "NNE",
+      "rain": 5
+    },
+    {
+      "date": "2021-06-03",
+      "pressure": 1012.0,
+      "temperature": 31.0,
+      "humidity": 70,
+      "condition": "Partly Cloudy",
+      "wind": 4,
+      "wind direction": "NNE",
+      "rain": 8
+    },
+    {
+      "date": "2021-06-04",
+      "pressure": 1013.0,
+      "temperature": 30.0,
+      "humidity": 73,
+      "condition": "Mostly Cloudy",
+      "wind": 5,
+      "wind direction": "NNE",
+      "rain": 12
+    },
+    {
+      "date": "2021-06-05",
+      "pressure": 1012.0,
+      "temperature": 30.0,
+      "humidity": "74%",
+      "condition": "Mostly Cloudy",
+      "wind": 4,
+      "wind direction": "NNE",
+      "rain": 18
+    },
+    {
+      "date": "2021-06-06",
+      "pressure": 1011.0,
+      "temperature": 31.0,
+      "humidity": 69,
+      "condition": "Mostly Cloudy",
+      "wind": 4,
+      "wind direction": "NNE",
+      "rain": 19
+    },
+    {
+      "date": "2021-06-07",
+      "pressure": 1011.0,
+      "temperature": 30.0,
+      "humidity": 70,
+      "condition": "Light Rain",
+      "wind": 4,
+      "wind direction": "NNW",
+      "rain": 12
+    },
+    {
+      "date": "2021-06-08",
+      "pressure": 1012.0,
+      "temperature": 31.0,
+      "humidity": 68,
+      "condition": "Partly Cloudy",
+      "wind": 4,
+      "wind direction": "NNE",
+      "rain": 2
+    },
+    {
+      "date": "2021-06-09",
+      "pressure": 1002.0,
+      "temperature": 32.7,
+      "humidity": 68,
+      "condition": "",
+      "wind": null,
+      "wind direction": "Partly Cloudy",
+      "rain": 30
+    },
+    {
+      "date": "2021-06-10",
+      "pressure": 1011.0,
+      "temperature": 31.0,
+      "humidity": 67,
+      "condition": "Mostly Cloudy",
+      "wind": 4,
+      "wind direction": "N",
+      "rain": 8
+    },
+    {
+      "date": "2021-06-11",
+      "pressure": 1011.0,
+      "temperature": 32.0,
+      "humidity": 67,
+      "condition": "Mostly Cloudy",
+      "wind": 5,
+      "wind direction": "NNE",
+      "rain": 9
+    },
+    {
+      "date": "2021-06-12",
+      "pressure": 1013.0,
+      "temperature": 31.0,
+      "humidity": 68,
+      "condition": "Mostly Cloudy",
+      "wind": 4,
+      "wind direction": "NNE",
+      "rain": 0
+    },
+    {
+      "date": "2021-06-13",
+      "pressure": 1013.0,
+      "temperature": 31.0,
+      "humidity": 67,
+      "condition": "Mostly Cloudy",
+      "wind": 4,
+      "wind direction": "NNE",
+      "rain": 2
+    },
+    {
+      "date": "2021-06-14",
+      "pressure": 1013.0,
+      "temperature": 32.0,
+      "humidity": 67,
+      "condition": "Mostly Cloudy",
+      "wind": 3,
+      "wind direction": "NNE",
+      "rain": 3
+    },
+    {
+      "date": "2021-06-15",
+      "pressure": 1013.0,
+      "temperature": 32.0,
+      "humidity": 67,
+      "condition": "Mostly Cloudy",
+      "wind": 6,
+      "wind direction": "NE",
+      "rain": 4
+    }
+  ]
+}
