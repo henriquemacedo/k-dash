@@ -24,14 +24,15 @@ export default function useFormatData(date, data) {
       useGrouping: false,
     });
 
+    const dayValue = data[`${dayBefore} ${number}:00:00+00:00`] ?? 0;
+
     items[0].data.push({
       x: `${dayBefore} ${number}:00:00+00:00`,
-      y:
-        getBase(data[`${dayBefore} ${number}:00:00+00:00`]) > 0
-          ? getBase(data[`${dayBefore} ${number}:00:00+00:00`]) **
-              getExponent(data[`${dayBefore} ${number}:00:00+00:00`]) /
-            0.01
-          : 0,
+      y: dayValue
+        ? getBase(dayValue) > 0
+          ? getBase(dayValue) ** getExponent(dayValue) / 0.01
+          : 0
+        : null,
     });
   }
 
@@ -41,14 +42,15 @@ export default function useFormatData(date, data) {
       useGrouping: false,
     });
 
+    const dayValue = data[`${date} ${number}:00:00+00:00`] ?? 0;
+
     items[0].data.push({
       x: `${date} ${number}:00:00+00:00`,
-      y:
-        getBase(data[`${date} ${number}:00:00+00:00`]) > 0
-          ? getBase(data[`${date} ${number}:00:00+00:00`]) **
-              getExponent(data[`${date} ${number}:00:00+00:00`]) /
-            0.01
-          : 0,
+      y: dayValue
+        ? getBase(dayValue) > 0
+          ? getBase(dayValue) ** getExponent(dayValue) / 0.01
+          : 0
+        : null,
     });
   }
 

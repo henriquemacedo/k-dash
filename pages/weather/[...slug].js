@@ -6,6 +6,7 @@ import DatePicker from "@ui/date-picker";
 import SurfaceRunoffChart from "@components/surface-runoff-chart";
 import { useSurfaceRunoffData } from "hooks/useSurfaceRunoffData";
 
+const mockData = process.env.mockAPI === true;
 const moment = require("moment");
 
 export default function Post() {
@@ -13,7 +14,7 @@ export default function Post() {
   const router = useRouter();
   const { slug } = router.query;
   const [local, setLocal] = useState({});
-  const [date, setDate] = useState("2021-06-09");
+  const [date, setDate] = useState(mockData ? "2021-06-09" : moment());
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -36,8 +37,8 @@ export default function Post() {
   return (
     <>
       <DatePicker
-        min="2021-06-01"
-        max="2021-06-15"
+        min={mockData ? "2021-06-02" : ""}
+        max={mockData ? "2021-06-14" : ""}
         value={moment(date).format("YYYY-MM-DD")}
         onChange={(e) => setDate(e.detail.value)}
       />
