@@ -31,9 +31,10 @@ export default function SelectInteractive() {
 
   return (
     <Select
-      instanceId="dasd"
-      placeholder="Please select a city"
+      instanceId="select-local"
+      className="select-dropdown"
       options={selectOptions}
+      placeholder="Please select a city"
       value={selectOptions[defaultValue]}
       onChange={handleChange}
     />
