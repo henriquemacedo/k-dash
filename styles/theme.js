@@ -13,11 +13,18 @@ const textColor = theme("mode", {
 });
 
 export const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
   :root {
     --fontregular: 400;
     --light: #fafafa;
     --grey: #eeeeee;
     --dark: #212121;
+    --pink: #A400C9;
 
     --duet-color-primary: #005fcc;
     --duet-color-text: #333;
@@ -46,7 +53,6 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto', Verdana, Arial, Helvetica, sans-serif;
     font-weight: var(--fontRegular);
     color: ${textColor};
-    ${"" /* transition: background 0.2s ease-in, color 0.2s ease-in; */}
     overflow-x: hidden;
   }
 `;

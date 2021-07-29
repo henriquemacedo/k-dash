@@ -37,19 +37,8 @@ function Application({ Component, pageProps }) {
   return (
     <ThemeProvider theme={{ mode: isDarkTheme ? "dark" : "light" }}>
       <GlobalStyles />
-      <Topbar>
+      <Topbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
         <SelectInteractive />
-        <button onClick={toggleTheme}>
-          {isDarkTheme ? (
-            <span aria-label="Light mode" role="img">
-              🌞
-            </span>
-          ) : (
-            <span aria-label="Dark mode" role="img">
-              🌜
-            </span>
-          )}
-        </button>
       </Topbar>
       <Component {...pageProps} />
     </ThemeProvider>
