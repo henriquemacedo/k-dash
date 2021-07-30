@@ -20,7 +20,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    --fontregular: 400;
+    --fontRegular: 400;
+    --fontBlack: 900;
     --light: #fafafa;
     --grey: #eeeeee;
     --dark: #212121;
@@ -30,14 +31,13 @@ export const GlobalStyles = createGlobalStyle`
     --duet-color-text: #333;
     --duet-color-text-active: #fff;
     --duet-color-placeholder: #666;
-    --duet-color-button: #f5f5f5;
+    --duet-color-button: #eeeeee;
     --duet-color-surface: #fff;
     --duet-color-overlay: rgba(0, 0, 0, 0.8);
-    --duet-color-border: #333;
     --duet-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --duet-font-normal: 400;
     --duet-font-bold: 600;
-    --duet-radius: 4px;
+    --duet-radius: 6px;
     --duet-z-index: 600;
   }
 

@@ -1,4 +1,12 @@
 import Head from "next/head";
+import styled from "styled-components";
+import { rem } from "polished";
+
+const Wrapper = styled.main`
+  margin: 0 auto;
+  max-width: ${rem("800px")};
+  padding: 0 ${rem("15px")};
+`;
 
 export default function Page(props) {
   const { children } = props;
@@ -10,7 +18,7 @@ export default function Page(props) {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main>{children}</main>
+      <Wrapper>{children}</Wrapper>
     </>
   );
 }

@@ -48,6 +48,7 @@ export const Wrapper = styled.div`
     > div {
       border-width: 2px;
       border-color: ${darken(0.2, "#eeeeee")};
+      border-radius: 6px;
       background-color: ${theme("mode", {
         dark: darken(0.2, "#000000"),
       })};
