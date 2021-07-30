@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import DatePicker from "@ui/date-picker";
 import Page from "@components/page";
+import Forecast from "@components/forecast";
 import SurfaceRunoffChart from "@components/surface-runoff-chart";
 import { useSurfaceRunoffData } from "hooks/useSurfaceRunoffData";
 
@@ -21,13 +22,13 @@ export default function Post() {
 
     const getPageInfo = weatherZones.filter((local) => {
       return (
-        local.country.toLowerCase() === "ghana" &&
-        local.city.toLowerCase() === "accra"
+        local.country.toLowerCase() === slug[0] &&
+        local.city.toLowerCase() === slug[1]
       );
     });
 
     setLocal(getPageInfo[0]);
-  }, [router.isReady]);
+  }, [slug, router.isReady]);
 
   const { loading, surfaceRunoff } = useSurfaceRunoffData({
     date: date,
@@ -42,18 +43,20 @@ export default function Post() {
         value={moment(date).format("YYYY-MM-DD")}
         onChange={(e) => setDate(e.detail.value)}
       />
-      <p>Page: {slug}</p>
-      <p>
+      {/* <p>Page: {slug}</p> */}
+      {/* <p>
         Status: {loading ? "Loading..." : !surfaceRunoff ? "Empty!" : "Done!"}
-      </p>
+      </p> */}
 
-      <div style={{ height: "400px" }}>
+      <Forecast date={date} local={local} />
+
+      {/* <div style={{ height: "400px" }}>
         {!loading && <SurfaceRunoffChart date={date} data={surfaceRunoff} />}
-      </div>
+      </div> */}
 
-      <Link href="/">
+      {/* <Link href="/">
         <a>Back HOME</a>
-      </Link>
+      </Link> */}
     </Page>
   );
 }
