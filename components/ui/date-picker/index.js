@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { defineCustomElements } from "@duetds/date-picker/dist/loader";
+import * as Styles from "./styles";
 
 function useListener(ref, eventName, handler) {
   useEffect(() => {
@@ -38,5 +39,9 @@ export default function DatePicker({
     ref.current.dateAdapter = dateAdapter;
   }, [localization, dateAdapter]);
 
-  return <duet-date-picker ref={ref} {...props}></duet-date-picker>;
+  return (
+    <Styles.Wrapper>
+      <duet-date-picker ref={ref} {...props}></duet-date-picker>
+    </Styles.Wrapper>
+  );
 }
