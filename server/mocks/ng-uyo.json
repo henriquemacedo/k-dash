@@ -19,7 +19,7 @@
       "humidity": 57,
       "condition": "Cloudy",
       "wind": null,
-      "wind direction": "",
+      "wind direction": null,
       "rain": 20
     },
     {
