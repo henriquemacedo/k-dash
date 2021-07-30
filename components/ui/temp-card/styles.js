@@ -21,7 +21,7 @@ const icons = theme("mode", {
 export const Wrapper = styled.div`
   margin-top: ${rem("50px")};
   background-color: ${cardBg};
-  border: 1px solid ${cardBorder};
+  border: 2px solid ${cardBorder};
   border-radius: 10px;
   display: flex;
   justify-content: space-between;

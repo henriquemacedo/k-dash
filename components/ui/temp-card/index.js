@@ -5,7 +5,7 @@ import * as Styles from "./styles";
 const moment = require("moment");
 
 export default function TempCard(props) {
-  const { date = "2021-06-09", forecast } = props;
+  const { date = "2021-06-09", forecast, loading = true } = props;
 
   const createWeek = () => {
     let days = [];

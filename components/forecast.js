@@ -6,7 +6,7 @@ const moment = require("moment");
 export default function Forecast(props) {
   const { date, local } = props;
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (Object.entries(local).length === 0) {
@@ -31,9 +31,5 @@ export default function Forecast(props) {
     }
   }, [date, local]);
 
-  return (
-    <>
-      <TempCard date={date} forecast={data} loading={loading} />
-    </>
-  );
+  return <TempCard date={date} forecast={data} loading={loading} />;
 }
