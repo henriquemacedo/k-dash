@@ -59,6 +59,15 @@ export const Day = styled.div`
     svg {
       fill: var(--light);
     }
+
+    .empty {
+      span,
+      svg {
+        opacity: ${theme("mode", {
+          dark: 0.6,
+        })};
+      }
+    }
   }
 
   > div {
@@ -71,6 +80,22 @@ export const Day = styled.div`
   &:first-child,
   &:last-child {
     display: none;
+  }
+
+  > div.empty {
+    span {
+      color: ${darken(0.2, "#eeeeee")};
+      opacity: ${theme("mode", {
+        dark: 0.3,
+      })};
+    }
+
+    svg {
+      fill: ${darken(0.2, "#eeeeee")};
+      opacity: ${theme("mode", {
+        dark: 0.3,
+      })};
+    }
   }
 
   @media ${device.s} {

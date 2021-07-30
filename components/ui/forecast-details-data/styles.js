@@ -1,11 +1,5 @@
 import styled from "styled-components";
-// import theme from "styled-theming";
 import { rem, darken } from "polished";
-
-// const icons = theme("mode", {
-//   light: darken(0.2, "#eeeeee"),
-//   dark: "#424242",
-// });
 
 export const Wrapper = styled.div`
   margin-top: ${rem("45px")};
@@ -95,6 +89,10 @@ export const Wrapper = styled.div`
         width: auto;
         height: ${rem("30px")};
         fill: ${darken(0.2, "#eeeeee")};
+      }
+
+      .empty {
+        color: ${darken(0.2, "#eeeeee")};
       }
     }
   }
