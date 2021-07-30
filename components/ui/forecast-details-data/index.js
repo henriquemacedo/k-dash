@@ -9,27 +9,41 @@ export default function ForecastDetailsData(props) {
       <ul>
         <li>
           <Icon icon="precipitation" />
-          {!loading && data[0].rain ? `${data[0].rain}%` : "n/a"}
+          {!loading && data.length > 0 && data[0].rain ? (
+            <span>{`${data[0].rain}%`}</span>
+          ) : (
+            <span className="empty">N/A</span>
+          )}
         </li>
         <li>
           <Icon icon="humidity" />
-          {!loading && data[0].humidity ? `${data[0].humidity}%` : "n/a"}
+          {!loading && data.length > 0 && data[0].humidity ? (
+            <span>{`${data[0].humidity}%`}</span>
+          ) : (
+            <span className="empty">N/A</span>
+          )}
         </li>
         <li
           className={
-            !loading && data[0].windDirection != ""
+            !loading && data.length > 0 && data[0].windDirection != null
               ? data[0].windDirection
               : "wind-direction"
           }
         >
           <Icon icon="direction" />
-          {!loading && data[0].wind
-            ? `${data[0].windDirection} ${data[0].wind} m/s`
-            : "n/a"}
+          {!loading && data.length > 0 && data[0].wind ? (
+            <span>{`${data[0].windDirection} ${data[0].wind} m/s`}</span>
+          ) : (
+            <span className="empty">N/A</span>
+          )}
         </li>
         <li>
           <Icon icon="pressure" />
-          {!loading && data[0].pressure ? `${data[0].pressure} mb` : "n/a"}
+          {!loading && data.length > 0 && data[0].pressure ? (
+            <span>{`${data[0].pressure} mb`}</span>
+          ) : (
+            <span className="empty">N/A</span>
+          )}
         </li>
       </ul>
     </Styles.Wrapper>

@@ -31,21 +31,21 @@ export default function TempCard(props) {
         return (
           <Styles.Day key={index} className={index === 3 ? "today" : ""}>
             <div>{moment(day).format("MMM DD")}</div>
-            <div className="temp">
+            <div className={filteredDay.length > 0 ? "temp" : "empty temp"}>
               <span>
                 {filteredDay.length > 0 && filteredDay[0].temperature != ""
                   ? `${filteredDay[0].temperature}º`
-                  : "n/a"}
+                  : "N/A"}
               </span>
             </div>
-            <div>
-              <span>
-                {filteredDay.length > 0 && filteredDay[0].condition != "" ? (
-                  <Icon icon={useWeatherCondition(filteredDay[0].condition)} />
-                ) : (
-                  "n/a"
-                )}
-              </span>
+            <div
+              className={filteredDay.length > 0 ? "" : "empty" ? "empty" : ""}
+            >
+              {filteredDay.length > 0 && filteredDay[0].condition != "" ? (
+                <Icon icon={useWeatherCondition(filteredDay[0].condition)} />
+              ) : (
+                <Icon icon="off" />
+              )}
             </div>
           </Styles.Day>
         );
