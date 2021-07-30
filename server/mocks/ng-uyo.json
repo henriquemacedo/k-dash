@@ -9,7 +9,7 @@
       "humidity": 77,
       "condition": "Cloudy",
       "wind": 5,
-      "wind direction": "WSW",
+      "windDirection": "WSW",
       "rain": 80
     },
     {
@@ -19,7 +19,7 @@
       "humidity": 57,
       "condition": "Cloudy",
       "wind": null,
-      "wind direction": null,
+      "windDirection": null,
       "rain": 20
     },
     {
@@ -29,7 +29,7 @@
       "humidity": 60,
       "condition": "Sunny",
       "wind": 15,
-      "wind direction": "NE",
+      "windDirection": "NE",
       "rain": 20
     }
   ]

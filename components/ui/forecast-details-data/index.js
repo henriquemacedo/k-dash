@@ -15,9 +15,17 @@ export default function ForecastDetailsData(props) {
           <Icon icon="humidity" />
           {!loading && data[0].humidity ? `${data[0].humidity}%` : "n/a"}
         </li>
-        <li>
-          <Icon icon="wind" />
-          {!loading && data[0].wind ? `${data[0].wind} m/s` : "n/a"}
+        <li
+          className={
+            !loading && data[0].windDirection != ""
+              ? data[0].windDirection
+              : "wind-direction"
+          }
+        >
+          <Icon icon="direction" />
+          {!loading && data[0].wind
+            ? `${data[0].windDirection} ${data[0].wind} m/s`
+            : "n/a"}
         </li>
         <li>
           <Icon icon="pressure" />

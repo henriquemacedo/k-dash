@@ -9,7 +9,7 @@
       "humidity": 67,
       "condition": "Cloudy",
       "wind": 4,
-      "wind direction": "ENE",
+      "windDirection": "ENE",
       "rain": 30
     },
     {
@@ -19,7 +19,7 @@
       "humidity": 67,
       "condition": "Mostly Cloudy",
       "wind": 5,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 5
     },
     {
@@ -29,7 +29,7 @@
       "humidity": 70,
       "condition": "Partly Cloudy",
       "wind": 4,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 8
     },
     {
@@ -39,7 +39,7 @@
       "humidity": 73,
       "condition": "Mostly Cloudy",
       "wind": 5,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 12
     },
     {
@@ -49,7 +49,7 @@
       "humidity": "74%",
       "condition": "Mostly Cloudy",
       "wind": 4,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 18
     },
     {
@@ -59,7 +59,7 @@
       "humidity": 69,
       "condition": "Mostly Cloudy",
       "wind": 4,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 19
     },
     {
@@ -69,7 +69,7 @@
       "humidity": 70,
       "condition": "Light Rain",
       "wind": 4,
-      "wind direction": "NNW",
+      "windDirection": "NNW",
       "rain": 12
     },
     {
@@ -79,7 +79,7 @@
       "humidity": 68,
       "condition": "Partly Cloudy",
       "wind": 4,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 2
     },
     {
@@ -89,7 +89,7 @@
       "humidity": 68,
       "condition": "Partly Cloudy",
       "wind": null,
-      "wind direction": null,
+      "windDirection": null,
       "rain": 30
     },
     {
@@ -99,7 +99,7 @@
       "humidity": 67,
       "condition": "Mostly Cloudy",
       "wind": 4,
-      "wind direction": "N",
+      "windDirection": "N",
       "rain": 8
     },
     {
@@ -109,7 +109,7 @@
       "humidity": 67,
       "condition": "Mostly Cloudy",
       "wind": 5,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 9
     },
     {
@@ -119,7 +119,7 @@
       "humidity": 68,
       "condition": "Mostly Cloudy",
       "wind": 4,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 0
     },
     {
@@ -129,7 +129,7 @@
       "humidity": 67,
       "condition": "Mostly Cloudy",
       "wind": 4,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 2
     },
     {
@@ -139,7 +139,7 @@
       "humidity": 67,
       "condition": "Mostly Cloudy",
       "wind": 3,
-      "wind direction": "NNE",
+      "windDirection": "NNE",
       "rain": 3
     },
     {
@@ -149,7 +149,7 @@
       "humidity": 67,
       "condition": "Mostly Cloudy",
       "wind": 6,
-      "wind direction": "NE",
+      "windDirection": "NE",
       "rain": 4
     }
   ]
