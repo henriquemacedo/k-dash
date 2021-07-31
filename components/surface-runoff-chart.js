@@ -4,6 +4,7 @@ import theme from "styled-theming";
 import { rem, darken } from "polished";
 import { ResponsiveLine } from "@nivo/line";
 import useSurfaceRunoffData from "hooks/useSurfaceRunoffData";
+import Spinner from "@ui/spinner";
 
 const cardBorder = theme("mode", {
   light: darken(0.1, "#eeeeee"),
@@ -26,6 +27,13 @@ const Wrapper = styled.main`
   padding: ${rem("15px")};
 `;
 
+const Loading = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const moment = require("moment");
 
 export default function SurfaceRunoffChart(props) {
@@ -39,7 +47,11 @@ export default function SurfaceRunoffChart(props) {
 
   return (
     <Wrapper>
-      {!loading && (
+      {!loading ? (
+        <Loading>
+          <Spinner />
+        </Loading>
+      ) : (
         <ResponsiveLine
           data={surfaceRunoff}
           margin={{ top: 18, right: 10, bottom: 35, left: 35 }}
