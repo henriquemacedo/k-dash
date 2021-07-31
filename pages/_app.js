@@ -1,9 +1,9 @@
-import "@styles/styles.css";
 import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../styles/theme";
 import Topbar from "@ui/topbar";
 import SelectInteractive from "@components/select-interactive";
+import "@styles/styles.css";
 
 function Application({ Component, pageProps }) {
   const [mountedComponent, setMountedComponent] = useState(false);

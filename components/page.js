@@ -21,25 +21,6 @@ export default function Page(props) {
       <Head>
         <meta charset="utf-8" />
         <title>{title}</title>
-        {/* <link rel="shortcut icon" type="image/jpg" href="/favicon.ico" /> */}
-        {/* <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        /> */}
-        {/* <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        /> */}
-        {/* <link
-          rel="icon"
-          type="image/png"
-          sizes="96x96"
-          href="/favicon-96x96.png"
-        /> */}
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="viewport"
