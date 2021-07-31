@@ -35,7 +35,7 @@ export default function SelectInteractive() {
       className="select-dropdown"
       options={selectOptions}
       placeholder="Please select a city"
-      value={selectOptions[defaultValue]}
+      value={currentRoute != "/" ? selectOptions[defaultValue] : ""}
       onChange={handleChange}
     />
   );
