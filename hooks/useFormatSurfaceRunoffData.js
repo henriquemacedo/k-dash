@@ -30,7 +30,7 @@ export default function useFormatSurfaceRunoffData(date, data) {
       x: `${dayBefore} ${number}:00:00+00:00`,
       y: dayValue
         ? getBase(dayValue) > 0
-          ? getBase(dayValue) ** getExponent(dayValue) / 0.01
+          ? getBase(dayValue) * Math.exp(getExponent(dayValue))
           : 0
         : null,
     });
@@ -48,7 +48,7 @@ export default function useFormatSurfaceRunoffData(date, data) {
       x: `${date} ${number}:00:00+00:00`,
       y: dayValue
         ? getBase(dayValue) > 0
-          ? getBase(dayValue) ** getExponent(dayValue) / 0.01
+          ? getBase(dayValue) * Math.exp(getExponent(dayValue))
           : 0
         : null,
     });

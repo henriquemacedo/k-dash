@@ -47,26 +47,26 @@ export default function SurfaceRunoffChart(props) {
 
   return (
     <Wrapper>
-      {loading ? (
+      {loading || Object.entries(local).length === 0 ? (
         <Loading>
           <Spinner />
         </Loading>
       ) : (
         <ResponsiveLine
           data={surfaceRunoff}
-          margin={{ top: 18, right: 10, bottom: 35, left: 35 }}
+          margin={{ top: 40, right: 10, bottom: 45, left: 35 }}
           xScale={{
             type: "point",
           }}
-          yFormat=" >-.2f"
+          yFormat=" >-.4f"
           enableGridX={false}
           yScale={{
             type: "linear",
             min: "0",
-            max: "75",
+            max: "auto",
             reverse: false,
           }}
-          curve="cardinal"
+          curve="linear"
           axisTop={null}
           axisRight={null}
           axisBottom={{
@@ -83,25 +83,25 @@ export default function SurfaceRunoffChart(props) {
             tickValues: [0, 25, 50, 75],
             tickSize: 10,
           }}
-          lineWidth={4}
+          lineWidth={3}
           colors={["#0336ff"]}
-          markers={[
-            {
-              axis: "y",
-              value: 10,
-              lineStyle: {
-                stroke: "#F44336",
-                strokeWidth: 3,
-                opacity: themeContext.mode === "light" ? 0.5 : 1,
-              },
-              legend: "flood risk (cm)",
-              legendPosition: "top-left",
-              textStyle: {
-                fill: "#F44336",
-                opacity: themeContext.mode === "light" ? 0.5 : 1,
-              },
-            },
-          ]}
+          // markers={[
+          //   {
+          //     axis: "y",
+          //     value: 10,
+          //     lineStyle: {
+          //       stroke: "#F44336",
+          //       strokeWidth: 3,
+          //       opacity: themeContext.mode === "light" ? 0.5 : 1,
+          //     },
+          //     legend: "flood risk (cm)",
+          //     legendPosition: "top-left",
+          //     textStyle: {
+          //       fill: "#F44336",
+          //       opacity: themeContext.mode === "light" ? 0.5 : 1,
+          //     },
+          //   },
+          // ]}
           enableCrosshair={true}
           theme={{
             axis: {
@@ -131,9 +131,9 @@ export default function SurfaceRunoffChart(props) {
             },
           }}
           pointSize={8}
-          pointBorderWidth={4}
-          pointBorderColor="#0336ff"
-          pointColor="#ffffff"
+          // pointBorderWidth={2}
+          // pointBorderColor="#0336ff"
+          pointColor="#0336ff"
           pointLabelYOffset={-12}
           enableArea={false}
           useMesh={true}

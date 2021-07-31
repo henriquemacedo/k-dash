@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import DatePicker from "@ui/date-picker";
+import Footer from "@ui/footer";
 import Page from "@components/page";
 import Alerts from "@components/alerts";
 import Forecast from "@components/forecast";
@@ -15,7 +17,9 @@ export default function Post() {
   const router = useRouter();
   const { slug } = router.query;
   const [local, setLocal] = useState({});
-  const [date, setDate] = useState(mockData ? "2021-06-09" : moment());
+  const [date, setDate] = useState(
+    mockData && local.city === "Accra" ? "2021-06-09" : "2021-03-09"
+  );
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -33,8 +37,8 @@ export default function Post() {
   return (
     <Page>
       <DatePicker
-        min={mockData ? "2021-06-02" : ""}
-        max={mockData ? "2021-06-14" : ""}
+        min={mockData && local.city === "Accra" ? "2021-06-01" : "2021-01-01"}
+        max={mockData && local.city === "Accra" ? "2021-06-15" : "2021-03-31"}
         value={moment(date).format("YYYY-MM-DD")}
         onChange={(e) => setDate(e.detail.value)}
       />
@@ -43,6 +47,12 @@ export default function Post() {
       <Forecast date={date} local={local} />
       <ForecastDetails date={date} local={local} />
       <SurfaceRunoffChart date={date} local={local} />
+      <Footer>
+        Back to{" "}
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+      </Footer>
     </Page>
   );
 }

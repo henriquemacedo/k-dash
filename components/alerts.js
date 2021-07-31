@@ -8,7 +8,8 @@ const moment = require("moment");
 
 export default function Alerts(props) {
   const { date, local } = props;
-  const [highestValue, setHighestValue] = useState(null);
+  const [numberOfWaterRunoffValues, setNumberOfWaterRunoffValues] =
+    useState(null);
   const [airQuality, setAirQuality] = useState(null);
 
   const { surfaceRunoff } = useSurfaceRunoffData({
@@ -20,13 +21,15 @@ export default function Alerts(props) {
     if (surfaceRunoff === null || Object.entries(local).length === 0) {
       return;
     } else {
-      const filteredForecast = surfaceRunoff[0].data.filter((item) => {
-        return item.x.includes(date);
+      const filteredY = surfaceRunoff[0]["data"].map(function (a) {
+        return a.y;
       });
-
-      setHighestValue(
-        filteredForecast.reduce((a, b) => (a = a > b.y ? a : b.y), 0)
+      let valuesToRemove = [0];
+      const waterRaunoffValues = filteredY.filter(
+        (item) => !valuesToRemove.includes(item)
       );
+
+      setNumberOfWaterRunoffValues(waterRaunoffValues.length);
 
       const data = require(`server/mocks/${local?.countryCode.toLowerCase()}-${local?.city.toLowerCase()}`);
       const forecast = data.forecast;
@@ -65,7 +68,7 @@ export default function Alerts(props) {
   return (
     <AlertsList
       airQuality={useAirQuality(airQuality)}
-      floodRisk={useFloodRisk(highestValue)}
+      floodRisk={useFloodRisk(numberOfWaterRunoffValues)}
     />
   );
 }
