@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import DatePicker from "@ui/date-picker";
@@ -6,7 +5,6 @@ import Page from "@components/page";
 import Forecast from "@components/forecast";
 import ForecastDetails from "@components/forecast-details";
 import SurfaceRunoffChart from "@components/surface-runoff-chart";
-import { useSurfaceRunoffData } from "hooks/useSurfaceRunoffData";
 
 const mockData = process.env.mockAPI === true;
 const moment = require("moment");
@@ -31,11 +29,6 @@ export default function Post() {
     setLocal(getPageInfo[0]);
   }, [slug, router.isReady]);
 
-  const { loading, surfaceRunoff } = useSurfaceRunoffData({
-    date: date,
-    local: local,
-  });
-
   return (
     <Page>
       <DatePicker
@@ -44,21 +37,9 @@ export default function Post() {
         value={moment(date).format("YYYY-MM-DD")}
         onChange={(e) => setDate(e.detail.value)}
       />
-      {/* <p>Page: {slug}</p> */}
-      {/* <p>
-        Status: {loading ? "Loading..." : !surfaceRunoff ? "Empty!" : "Done!"}
-      </p> */}
-
       <Forecast date={date} local={local} />
       <ForecastDetails date={date} local={local} />
-
-      {/* <div style={{ height: "400px" }}>
-        {!loading && <SurfaceRunoffChart date={date} data={surfaceRunoff} />}
-      </div> */}
-
-      {/* <Link href="/">
-        <a>Back HOME</a>
-      </Link> */}
+      <SurfaceRunoffChart date={date} local={local} />
     </Page>
   );
 }
