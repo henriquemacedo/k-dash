@@ -44,17 +44,23 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    font-size: 100%;
+    font-size: 16px;
     scroll-behavior: smooth;
   }
 
   body {
     margin: 0;
     background: ${bodyBackground};
-    padding-top: ${rem("100px")};
+    padding: ${rem("100px")} 0 ${rem("15px")} 0;
     font-family: 'Roboto', Verdana, Arial, Helvetica, sans-serif;
     font-weight: var(--fontRegular);
     color: ${textColor};
+    font-size: 1rem;
     overflow-x: hidden;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 150%;
   }
 `;

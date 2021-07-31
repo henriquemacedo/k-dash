@@ -2,7 +2,7 @@ const withPWA = require("next-pwa");
 
 module.exports = withPWA({
   env: {
-    mockAPI: false,
+    mockAPI: true,
     weatherZones: [
       {
         country: "Ghana",

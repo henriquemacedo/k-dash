@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { rem, darken } from "polished";
+import { device } from "@utils/breakpoints";
 
 export const Wrapper = styled.div`
   margin-top: ${rem("45px")};
@@ -9,11 +10,14 @@ export const Wrapper = styled.div`
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     li {
       list-style: none;
-      margin: 0 ${rem("15px")};
+      width: 40%;
+      margin: ${rem("5px")};
       display: flex;
+      justify-content: center;
       align-items: center;
 
       &.wind-direction svg {
@@ -93,6 +97,18 @@ export const Wrapper = styled.div`
 
       .empty {
         color: ${darken(0.2, "#eeeeee")};
+      }
+    }
+  }
+
+  @media ${device.s} {
+    ul {
+      flex-wrap: nowrap;
+
+      li {
+        margin: 0 ${rem("15px")};
+        width: inherit;
+        justify-content: flex-start;
       }
     }
   }
