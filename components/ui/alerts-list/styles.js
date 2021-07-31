@@ -14,7 +14,6 @@ export const Wrapper = styled.main`
   border-radius: 10px;
   padding: ${rem("15px")};
   color: var(--dark);
-  font-weight: var(--fontBlack);
 
   ul {
     margin: 0;
@@ -43,6 +42,7 @@ export const Wrapper = styled.main`
         svg {
           width: ${rem("26px")};
           height: ${rem("26px")};
+          fill: var(--dark);
         }
       }
     }

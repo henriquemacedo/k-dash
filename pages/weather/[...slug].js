@@ -39,7 +39,7 @@ export default function Post() {
         onChange={(e) => setDate(e.detail.value)}
       />
 
-      <Alerts />
+      <Alerts date={date} local={local} />
       <Forecast date={date} local={local} />
       <ForecastDetails date={date} local={local} />
       <SurfaceRunoffChart date={date} local={local} />
