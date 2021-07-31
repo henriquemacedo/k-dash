@@ -8,12 +8,14 @@ export default function useSurfaceRunoffData(props) {
   const { date, local } = props;
   const [loading, setLoading] = useState(false);
   const [surfaceRunoff, setSurfaceRunoff] = useState(null);
-  const { lat, long } = local;
+  const { lat, long, city } = local;
 
   useEffect(() => {
-    if (mockData && localStorage.getItem("surface-runoff") === null) {
+    if (mockData) {
       setLoading(true);
-      const surfaceRunoffData = require("server/mocks/fakeSurfaceRunoff");
+      const surfaceRunoffData = require(`server/mocks/fakeSurfaceRunoff-${
+        city ? city.toLowerCase() : "accra"
+      }`);
       setSurfaceRunoff(useFormatSurfaceRunoffData(date, surfaceRunoffData));
       setLoading(false);
     }
@@ -36,7 +38,6 @@ export default function useSurfaceRunoffData(props) {
 
         fetchSurfaceRunoffMetadata = await fetchSurfaceRunoffMetadata.json();
         const lastUpdate = fetchSurfaceRunoffMetadata["time last generated"];
-        // const lastUpdate = "2021-07-30 21:07:53.560286";
 
         const isOutdated =
           localStorage.getItem("surface-runoff-update") != null
@@ -45,9 +46,11 @@ export default function useSurfaceRunoffData(props) {
               ).isSameOrBefore(moment(lastUpdate).format("YYYY-MM-DD HH:mm:ss"))
             : true;
 
-        setSurfaceRunoff(
-          useFormatSurfaceRunoffData(date, localData[0]["data"])
-        );
+        if (!mockData && !isOutdated) {
+          setSurfaceRunoff(
+            useFormatSurfaceRunoffData(date, localData[0]["data"])
+          );
+        }
 
         if (!mockData && isOutdated) {
           // GET LAST UPDATE DATA
@@ -65,9 +68,7 @@ export default function useSurfaceRunoffData(props) {
 
           localStorage.setItem(
             "surface-runoff",
-            JSON.stringify(
-              useFormatSurfaceRunoffData(date, fetchSurfaceRunoffData["data"])
-            )
+            JSON.stringify(fetchSurfaceRunoffData["data"])
           );
 
           localStorage.setItem(
@@ -82,12 +83,7 @@ export default function useSurfaceRunoffData(props) {
       }
     }
 
-    if (
-      (mockData && localStorage.getItem("surface-runoff") != null) ||
-      !mockData
-    ) {
-      getSurfaceRunoff();
-    }
+    !mockData && getSurfaceRunoff();
   }, [date, local]);
 
   return { loading, surfaceRunoff };

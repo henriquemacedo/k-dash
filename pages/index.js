@@ -8,6 +8,10 @@ const Wrapper = styled.div`
     color: var(--pink);
     text-decoration: none;
     transition-duration: 0.3s;
+
+    &:hover {
+      color: ${darken(0.1, "#A400C9")};
+    }
   }
 
   > div {
