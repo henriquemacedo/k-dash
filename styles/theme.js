@@ -26,6 +26,8 @@ export const GlobalStyles = createGlobalStyle`
     --grey: #eeeeee;
     --dark: #212121;
     --pink: #A400C9;
+    --warning: #FFB74D;
+    --danger: #F44336;
 
     --duet-color-primary: #005fcc;
     --duet-color-text: #333;

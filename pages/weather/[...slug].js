@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import DatePicker from "@ui/date-picker";
 import Page from "@components/page";
+import Alerts from "@components/alerts";
 import Forecast from "@components/forecast";
 import ForecastDetails from "@components/forecast-details";
 import SurfaceRunoffChart from "@components/surface-runoff-chart";
@@ -37,6 +38,8 @@ export default function Post() {
         value={moment(date).format("YYYY-MM-DD")}
         onChange={(e) => setDate(e.detail.value)}
       />
+
+      <Alerts />
       <Forecast date={date} local={local} />
       <ForecastDetails date={date} local={local} />
       <SurfaceRunoffChart date={date} local={local} />
