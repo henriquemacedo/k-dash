@@ -47,7 +47,7 @@ export default function SurfaceRunoffChart(props) {
 
   return (
     <Wrapper>
-      {!loading ? (
+      {loading ? (
         <Loading>
           <Spinner />
         </Loading>
