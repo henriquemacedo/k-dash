@@ -1,4 +1,4 @@
-export default function useFloodRisk(value) {
+export default function useAirQuality(value) {
   if (value === 0) {
     return;
   }

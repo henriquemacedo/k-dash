@@ -6,7 +6,7 @@ export default function AlertsList(props) {
 
   return (
     <>
-      {floodRisk || airQuality > 0 ? (
+      {floodRisk != undefined || airQuality != undefined ? (
         <Styles.Wrapper>
           <ul>
             {floodRisk && (

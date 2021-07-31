@@ -48,6 +48,14 @@ export default function Alerts(props) {
         if (lastWindValues.length === 1 && lastWindValues[0].wind < 5) {
           setAirQuality(1);
         }
+        if (
+          lastWindValues.length >= 1 &&
+          lastWindValues.reduce((total, next) => total + next.wind, 0) /
+            lastWindValues.length >=
+            5
+        ) {
+          setAirQuality(0);
+        }
       };
 
       getAirQuality();
