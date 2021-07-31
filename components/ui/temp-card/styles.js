@@ -61,10 +61,19 @@ export const Day = styled.div`
     }
 
     .empty {
+      span {
+        color: var(--light);
+      }
+
+      svg {
+        fill: var(--light);
+      }
+
       span,
       svg {
         opacity: ${theme("mode", {
-          dark: 0.6,
+          light: 0.3,
+          dark: 0.3,
         })};
       }
     }
