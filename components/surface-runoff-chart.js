@@ -3,7 +3,7 @@ import styled, { ThemeContext } from "styled-components";
 import theme from "styled-theming";
 import { rem, darken } from "polished";
 import { ResponsiveLine } from "@nivo/line";
-import { useSurfaceRunoffData } from "hooks/useSurfaceRunoffData";
+import useSurfaceRunoffData from "hooks/useSurfaceRunoffData";
 
 const cardBorder = theme("mode", {
   light: darken(0.1, "#eeeeee"),

@@ -3,7 +3,7 @@ import useFormatSurfaceRunoffData from "hooks/useFormatSurfaceRunoffData";
 
 const mockData = process.env.mockAPI === true;
 
-export const useSurfaceRunoffData = (props) => {
+export default function useSurfaceRunoffData(props) {
   const { date, local } = props;
   const [surfaceRunoff, setSurfaceRunoff] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -34,4 +34,4 @@ export const useSurfaceRunoffData = (props) => {
   }, [date, local]);
 
   return { loading, surfaceRunoff };
-};
+}
