@@ -16,6 +16,7 @@ The data used in K|Dash comes from two places, a .json file based on the "foreca
 * Clean UI;
 * Illustrate a variety of forecast types;
 * Support light/dark themes;
+* Full responsive;
 * Offline support (WPA).
 
 # Alerts
