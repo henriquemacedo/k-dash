@@ -59,6 +59,15 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 There is a flag in the `next.config.js` file that allows you to activate or not the _"dev mode"_, which is fed by local information for demo and challenge purposes. This avoids the limit of requests that can be made to the API and the CORS Error.
 
+### Mock files
+
+If `mockAPI: true` and needs to manipulate the data, go to the `server/mocks/` folder is the mock files that replicate the balloon and server data:
+
+- `fakeSurfaceRunoff-accra.json` for replicate _era5_surface_runoff-hourly_ data from API relative to Accra, Ghana;
+- `fakeSurfaceRunoff-uyo.json` for replicate _era5_surface_runoff-hourly_ data from API relative to Uyo, Nigeria;
+- `gh-accra.json` for replicate forecast from balloon relative to Accra, Ghana;
+- `ng-uyo.json` for replicate forecast from balloon relative to Uyo, Nigeria;
+
 ## CORS Error, what?
 
 The CORS Error is an error from a security mechanism that browsers implement called the same-origin policy, one of the most common cyber attacks, which allows a malicious website to take advantage of the browser's cookie storage system.
