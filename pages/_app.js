@@ -32,7 +32,7 @@ function Application({ Component, pageProps }) {
     }
   }, [mountedComponent]);
 
-  if (!mountedComponent) return <div />;
+  // if (!mountedComponent) return <div />;
 
   return (
     <ThemeProvider theme={{ mode: isDarkTheme ? "dark" : "light" }}>
