@@ -31,6 +31,7 @@ const Wrapper = styled.div`
 
       &:hover {
         background-color: ${darken(0.1, "#A400C9")};
+        color: var(--light);
       }
     }
   }

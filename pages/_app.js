@@ -6,7 +6,7 @@ import SelectInteractive from "@components/select-interactive";
 import "@styles/styles.css";
 
 function Application({ Component, pageProps }) {
-  const [mountedComponent, setMountedComponent] = useState(false);
+  const [mountedComponent, setMountedComponent] = useState(null);
   const [theme, setTheme] = useState("light");
   const isDarkTheme = theme === "dark";
 
@@ -32,7 +32,7 @@ function Application({ Component, pageProps }) {
     }
   }, [mountedComponent]);
 
-  // if (!mountedComponent) return <div />;
+  if (!mountedComponent) return <div />;
 
   return (
     <ThemeProvider theme={{ mode: isDarkTheme ? "dark" : "light" }}>

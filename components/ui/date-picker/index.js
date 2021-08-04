@@ -18,8 +18,8 @@ export default function DatePicker({
   onBlur,
   onOpen,
   onClose,
-  dateAdapter,
-  localization,
+  // dateAdapter,
+  // localization,
   ...props
 }) {
   const ref = useRef(null);
@@ -34,10 +34,10 @@ export default function DatePicker({
   useListener(ref, "duetOpen", onOpen);
   useListener(ref, "duetClose", onClose);
 
-  useEffect(() => {
-    ref.current.localization = localization;
-    ref.current.dateAdapter = dateAdapter;
-  }, [localization, dateAdapter]);
+  // useEffect(() => {
+  //   ref.current.localization = localization;
+  //   ref.current.dateAdapter = dateAdapter;
+  // }, [localization, dateAdapter]);
 
   return (
     <Styles.Wrapper>
