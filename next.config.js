@@ -1,6 +1,7 @@
-const withPWA = require("next-pwa");
+// const withPWA = require("next-pwa");
 
-module.exports = withPWA({
+// module.exports = withPWA({
+module.exports = {
   env: {
     mockAPI: true,
     weatherZones: [
@@ -23,4 +24,4 @@ module.exports = withPWA({
   pwa: {
     dest: "public",
   },
-});
+};
