@@ -19,7 +19,7 @@ export default function Page(props) {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <title>{title}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta
